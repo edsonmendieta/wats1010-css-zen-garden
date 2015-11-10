@@ -8,187 +8,386 @@
 /* Your images should be linked as if the CSS file sits in the same folder as the images. ie. no paths. */
 
 
+/******************************************\
+                $Imports
+\******************************************/
+
+@import url(https://fonts.googleapis.com/css?family=Lato:700italic,700,900,400italic);
+
+@import url(https://fonts.googleapis.com/css?family=Merriweather:400,400italic,300italic,300);
+
+
+
+/******************************************\
+                $CSS Reset
+\******************************************/
+
 /* basic elements */
-html {
-	margin: 0;
-	padding: 0;
-	}
-body { 
-	font: 75% georgia, sans-serif;
-	line-height: 1.88889;
-	color: #555753; 
-	background: #fff url(blossoms.jpg) no-repeat bottom right; 
-	margin: 0; 
-	padding: 0;
-	}
-p { 
-	margin-top: 0; 
-	text-align: justify;
-	}
-h3 { 
-	font: italic normal 1.4em georgia, sans-serif;
-	letter-spacing: 1px; 
-	margin-bottom: 0; 
-	color: #7D775C;
-	}
-a:link { 
-	font-weight: bold; 
-	text-decoration: none; 
-	color: #B7A5DF;
-	}
-a:visited { 
-	font-weight: bold; 
-	text-decoration: none; 
-	color: #D4CDDC;
-	}
-a:hover, a:focus, a:active { 
-	text-decoration: underline; 
-	color: #9685BA;
-	}
-abbr {
-	border-bottom: none;
-	}
-
-
-/* specific divs */
-.page-wrapper { 
-	background: url(zen-bg.jpg) no-repeat top left; 
-	padding: 0 175px 0 110px;  
-	margin: 0; 
-	position: relative;
-	}
-
-.intro { 
-	min-width: 470px;
-	width: 100%;
-	}
-
-header h1 { 
-	background: transparent url(h1.gif) no-repeat top left;
-	margin-top: 10px;
-	display: block;
-	width: 219px;
-	height: 87px;
-	float: left;
-
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-	}
-header h2 { 
-	background: transparent url(h2.gif) no-repeat top left; 
-	margin-top: 58px; 
-	margin-bottom: 40px; 
-	width: 200px; 
-	height: 18px; 
-	float: right;
-
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-	}
-header {
-	padding-top: 20px;
-	height: 87px;
+body, html, div, blockquote, img, label, p, h1, h2, h3, h4, h5, h6, pre, ul, ol,
+li, dl, dt, dd, form, a, fieldset, input, th, td
+{
+margin: 0; padding: 0; border: 0; outline: none;
+}
+ 
+body
+{
+line-height: 1;
+font-size: 88% /* Decide for yourself if you want to include this. */;
+}
+ 
+h1, h2, h3, h4, h5, h6
+{
+font-size: 200%;
+padding: .6em 0;
+margin: 0 0;
+}
+ 
+ul, ol
+{
+list-style: none;
+}
+ 
+a
+{
+color: green;
+text-decoration: none;
+}
+ 
+a:hover
+{
+text-decoration: none;
+color: #EBB000;
 }
 
-.summary {
-	clear: both; 
-	margin: 20px 20px 20px 10px; 
-	width: 160px; 
-	float: left;
-	}
+/******************************************\
+                $Shared
+\******************************************/
+
+*:before, *:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+
+
+/******************************************\
+                $Main
+\******************************************/
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: honeydew;
+  height: 100%;                         
+  width: 100%;
+}
+
+.page-wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+header[role="banner"] {
+  width: auto;
+  margin: 0 auto;
+  text-align: center;
+}
+
+header[role="banner"] h1 {
+  font-family: Lato;
+  font-weight: 900;
+  font-size: 4em;
+  margin: 80px auto;
+}
+
+header[role="banner"] h2 {
+  font-family: Lato;
+  font-weight: 400;
+  font-style: italic;
+  }
+
+
 .summary p {
-	font: italic 1.1em/2.2 georgia; 
-	text-align: center;
-	}
+  text-align: center;
+  font-family: Merriweather;
+  font-weight: 300;
+  line-height: 2em;
+}
+
+.summary :nth-child(2n) {
+  padding-top: 20px;
+  padding-bottom: 160px;
+}
 
 .preamble {
-	clear: right; 
-	padding: 0px 10px 0 10px;
-	}
-.supporting {	
-	padding-left: 10px; 
-	margin-bottom: 40px;
-	}
+  width: auto;
+  margin: 0 auto;
+  background-color: white;
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
 
-footer { 
-	text-align: center; 
-	}
-footer a:link, footer a:visited { 
-	margin-right: 20px; 
-	}
+.preamble :first-child {
+  text-align: center;
+  font-family: Lato;
+  font-weight: 700;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
 
-.sidebar {
-	margin-left: 600px; 
-	position: absolute; 
-	top: 0; 
-	right: 0;
-	}
-.sidebar .wrapper { 
-	font: 10px verdana, sans-serif; 
-	background: transparent url(paper-bg.jpg) top left repeat-y; 
-	padding: 10px; 
-	margin-top: 150px; 
-	width: 130px; 
-	}
-.sidebar h3.select { 
-	background: transparent url(h3.gif) no-repeat top left; 
-	margin: 10px 0 5px 0; 
-	width: 97px; 
-	height: 16px; 
+.preamble:nth-child(2n) {
+  text-align: left;
+}
 
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-	}
-.sidebar h3.archives { 
-	background: transparent url(h5.gif) no-repeat top left; 
-	margin: 25px 0 5px 0; 
-	width:57px; 
-	height: 14px; 
-
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-	}
-.sidebar h3.resources { 
-	background: transparent url(h6.gif) no-repeat top left; 
-	margin: 25px 0 5px 0; 
-	width:63px; 
-	height: 10px; 
-
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-	}
+.preamble p {
+  font-family: Merriweather;
+  font-weight: 400;
+  line-height: 2em;
+  padding: 0 10%;
+  -webkit-columns: 1 320px; /* Chrome, Safari, Opera */
+     -moz-columns: 1 320px; /* Firefox */
+          columns: 1 320px;
+}
 
 
-.sidebar ul {
-	margin: 0;
-	padding: 0;
-	}
-.sidebar li {
-	line-height: 1.3em; 
-	background: transparent url(cr1.gif) no-repeat top center; 
-	display: block; 
-	padding-top: 5px; 
-	margin-bottom: 5px;
-	list-style-type: none;
-	}
-.sidebar li a:link {
-	color: #988F5E;
-	}
-.sidebar li a:visited {
-	color: #B3AE94;
-	}
+.explanation {
+  width: auto;
+  margin: 0 auto;
+  padding-top: 40px;
+  padding-bottom: 80px;
+   
+}
+
+.explanation :first-child {
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-family: Lato;
+  font-weight: 700;
+}
+
+.explanation p {
+  font-family: Merriweather;
+  font-weight: 400;
+  line-height: 2em;
+  padding:0 10%;
+  -webkit-columns: 2 320px; /* Chrome, Safari, Opera */
+     -moz-columns: 2 320px; /* Firefox */
+          columns: 2 320px;
+}
+
+.participation {
+  width: auto;
+  padding-top: 40px;
+  padding-bottom: 80px;
+  background-color: white;
+}
+
+.participation :first-child {
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-family: Lato;
+  font-weight: 700;
+}
+
+.participation p {
+  font-family: Merriweather;
+  font-weight: 400;
+  line-height: 2em;
+  padding: 0 10%;
+  -webkit-columns: 2 320px; /* Chrome, Safari, Opera */
+     -moz-columns: 2 320px; /* Firefox */
+          columns: 2 320px;
+}
+
+.benefits {
+  width: auto;
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+
+.benefits :first-child {
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-family: Lato;
+  font-weight: 700;
+}
+
+.benefits p {
+  font-family: Merriweather;
+  font-weight: 400;
+  line-height: 2em;
+  padding: 0 10%;
+  -webkit-columns: 1 320px; /* Chrome, Safari, Opera */
+     -moz-columns: 1 320px; /* Firefox */
+          columns: 1 320px;
+}
+
+.requirements {
+  width: auto;
+  padding-top: 40px;
+  background-color: white;
+  padding-bottom: 80px;
+}
+
+.requirements :first-child {
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-family: Lato;
+  font-weight: 700;
+}
+
+.requirements p {
+  font-family: Merriweather;
+  font-weight: 400;
+  line-height: 2em;
+  padding: 0 10%;
+  -webkit-columns: 3 320px; /* Chrome, Safari, Opera */
+     -moz-columns: 3 320px; /* Firefox */
+          columns: 3 320px;
+}
+
+.requirements :last-child {
+  font-weight: 400;
+  font-style: italic;
+  -webkit-columns: 1 320px; /* Chrome, Safari, Opera */
+     -moz-columns: 1 320px; /* Firefox */
+          columns: 1 320px;
+  text-align: center;
+  padding-top: 60px;
+}
 
 
-.extra1 {
-	background: transparent url(cr2.gif) top left no-repeat; 
-	position: absolute; 
-	top: 40px; 
-	right: 0; 
-	width: 148px; 
-	height: 110px;
-	}
+footer {
+  font-family: Lato;
+  font-wieght: 700;
+/*   font-style: italic; */
+  width: 100%;
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #F9F6F6;
+}
+
+footer a {
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+
+.zen-resources {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  font-family: Merriweather;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.zen-resources h3 {                   /*header*/
+  visibility: hidden;
+}
+
+.zen-resources ul {
+  position: fixed;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: white;
+  border: solid white 2px;
+}
+
+.zen-resources li {
+  padding-left: 3%;
+  padding-right: 3%;
+
+}
+
+.zen-resources a {
+  position: relative;
+  color: #999966;
+  
+}
+
+.zen-resources a:hover {
+  color: #EBB000;
+}
+
+.zen-resources a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #EBB000;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+          transition: all 0.3s ease-in-out 0s;
+}
+
+.zen-resources a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+
+}
+
+
+.design-selection {
+  wdith: auto;
+  padding-top: 40px;
+}
+
+.design-selection h3 {
+  font-family: Lato;
+  font-weight: 700;
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+nav[role="navigation"] ul {
+/*   display: flex;
+  justify-content: center; */
+  width: auto;
+  padding-left: 21%;
+  -webkit-columns: 2 320px; /* Chrome, Safari, Opera */
+     -moz-columns: 2 320px; /* Firefox */
+          columns: 2 320px;
+}
+
+nav[role="navigation"] li {
+  font-family: Merriweather;
+  font-weight: 400;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* nav[role="navigation"] a {
+  padding-right: 2%;
+  padding-left: 2%;
+} */
+
+.design-archives {
+  padding-bottom: 70px;
+}
+
+.archives {
+  font-family: Lato;
+  font-weight: 700;
+  text-align: center;
+}
